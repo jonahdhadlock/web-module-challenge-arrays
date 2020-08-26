@@ -59,14 +59,11 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */
 
-originalFlavors.unshift("Rainbow Sherbert")
-console.log(originalFlavors);
-
-function addFlavor( /*code here*/ ) {
-
-    /*code here*/
-
+function addFlavor(flavor, arr) {
+    arr.unshift("Rainbow Sherbert");
+    return arr;
 }
+console.log(addFlavor("Rainbow Sherbert", originalFlavors));
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
@@ -78,14 +75,11 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/
 
-originalFlavors.pop();
-console.log(originalFlavors);
-
-function removeLastFlavor( /*code here*/ ) {
-
-    /*code here*/
-
+function removeLastFlavor(arr) {
+    arr.pop();
+    return arr;
 }
+console.log(removeLastFlavor(originalFlavors));
 
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
@@ -96,11 +90,17 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex( /*code here*/ ) {
-
-    /*code here*/
-
+function getFlavorByIndex(arr, ind) {
+    let flavor = [];
+    for (let i = 0; i <= arr.length; i++) {
+        if (i === ind) {
+            flavor.push(arr[i]);
+        }
+    }
+    let string = flavor.toString();
+    return string;
 }
+console.log(getFlavorByIndex(originalFlavors, 3));
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
