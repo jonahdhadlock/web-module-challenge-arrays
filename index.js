@@ -92,7 +92,7 @@ For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", a
 
 function getFlavorByIndex(arr, ind) {
     let flavor = [];
-    for (let i = 0; i <= arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         if (i === ind) {
             flavor.push(arr[i]);
         }
@@ -116,7 +116,7 @@ Hint: You can use .splice() for this
 */
 
 function removeFlavorByName(arr, name) {
-    for (let i = 0; i <= arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         if (arr[i] === name) {
             arr.splice(i, 1);
         }
@@ -137,7 +137,7 @@ and should return a new array that is identical to the old array. You can name t
 let arrNew = []
 
 function copy(arrOriginal, arrNew) {
-    for (let i = 0; i <= arrOriginal.length - 1; i++) {
+    for (let i = 0; i < arrOriginal.length; i++) {
         arrNew.push(arrOriginal[i]);
     }
     return arrNew;
@@ -159,11 +159,17 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord( /*code here*/ ) {
+let chocolate = [];
 
-    /*code here*/
-
+function filterByWord(arrOriginal, word) {
+    for (let i = 0; i < arrOriginal.length; i++) {
+        if (arrOriginal[i].includes("Chocolate")) {
+            chocolate.push(arrOriginal[i])
+        }
+    }
+    return chocolate
 }
+console.log(filterByWord(originalFlavors, "Chocolate"));
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
 
